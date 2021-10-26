@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap');
+
+.text-white{
+    font-family: 'Lobster', cursive;
+    font-size: 2rem;
+}
+.font{
+    color:"black";
+    font-family: "Roboto Slab,serif";
+    font-weight:"bold";
+}
+.foot{
+    margin-left: 22rem;
+}
+/* .navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 1039;
+} */
+
+    /* .footer{
+        background: white;
+        width: 100%;
+        -moz-box-shadow: 0 -5px 6px rgba(0,0,0,0.5);
+        -webkit-box-shadow: 0 -5px 6px rgba(0,0,0,0.5);
+        box-shadow: 0 -5px 6px rgba(0,0,0,0.5);
+        } */
+.footer{
+    position: sticky;
+    bottom: 0%;
+    top: 100rem;
+}

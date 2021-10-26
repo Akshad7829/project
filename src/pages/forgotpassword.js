@@ -41,7 +41,7 @@ const Forgotpassword=()=>{
         
             <Container className='text-center'>
                 <Row> 
-                                         <Col lg={6} className='offset-lg-3 mt-5'>
+                                         <Col lg={6} className='col-md-2 center'>
                         <Card>
                             <Form onSubmit={handleSubmit}>
                                 <CardHeader style={{color:"gold",backgroundColor:"black"}}>Forgot password</CardHeader>

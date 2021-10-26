@@ -12,12 +12,16 @@ import Home from "./pages/Home"
 import Profile from "./pages/profile"
 import Signin from "./pages/Signin"
 import Signup from "./pages/Signup"
+import about from "./pages/about"
 import Forgotpassword from "./pages/forgotpassword"
 import Pagenotfound from "./pages/Pagenotfound"
 import { UserContext } from "./context/UserContext"
 import Footer from "./layouts/Footer"
 import Header from "./layouts/Header"
 import firebaseConfig from "./config/firebaseconfig"
+import Updateprofile from "./pages/updateprofile";
+import Postproject from "./pages/postproject";
+import Contest from "./pages/contest";
 firebase.initializeApp(firebaseConfig);
 
 
@@ -39,6 +43,10 @@ const App=()=>{
                     <Route path="/signin" component={Signin} exact/>
                     <Route path="/forgotpassword" component={Forgotpassword} exact/>
                     <Route path="/profile" component={Profile} exact/>
+                    <Route path="/updateprofile" component={Updateprofile} exact/>
+                    <Route path="/postproject" component={Postproject} exact/>
+                    <Route path="/contest" component={Contest} exact/>
+                    <Route path="/about" component={about} exact/>
                     <Route path="*" component={Pagenotfound} exact/>
                 </Switch>
                 <Footer />

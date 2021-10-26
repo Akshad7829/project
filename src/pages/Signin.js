@@ -5,6 +5,8 @@ import {toast} from "react-toastify"
 import { AuthContext } from "../context/authcontext.js";
 import firebase from "firebase/app"
 import { UserContext } from "../context/UserContext"
+import "./signin.css"
+import logo from "./logo.png"
 const Signin=()=>{
 
 
@@ -48,8 +50,18 @@ const Signin=()=>{
   }
 
     return(
-        
+       
+            
             <Container className='text-center'>
+                  <Col   sm={3} className="m-auto">
+  <img
+    className="d-block mx-auto img-fluid w-50"
+    src={logo}
+    alt="mysvg"
+  ></img>
+  </Col>
+                 <div className="wholepage">
+          
                 <Row> 
                                          <Col lg={6} className='offset-lg-3 mt-5'>
                         <Card>
@@ -100,8 +112,9 @@ const Signin=()=>{
                         </Card>
                     </Col> 
                  </Row>
+                 </div>
             </Container>
-        
+           
     )
 }
 
