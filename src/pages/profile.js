@@ -25,7 +25,8 @@ import Loading from "./loading"
 import { toast } from "react-toastify";
 import { Carousel } from 'react-responsive-carousel';
 const Profile=()=>{
-  const [loading, setLoading] = useState(true);
+ 
+  const [loading, setLoading] = useState(false);
   const [posts, setPosts] = useState([]);
     const [user, setUser] = useState();
     const { currentUser } = useContext(AuthContext);
@@ -198,8 +199,12 @@ alert("updated")
   const deleteProjectByName=(proname)=>{
  console.log(proname)
   console.log(firebase.auth().currentUser.email)
+ 
  firebase.firestore().collection("users").doc(firebase.auth().currentUser.email).collection("pro").doc(String(proname)).delete();
  firebase.firestore().collection("project").doc(String(proname)).delete();
+
+  setLoading(true);
+  alert("Project Deleted Successfullly")
   
 }
 
@@ -247,24 +252,25 @@ alert("updated")
                         <div class="col-sm-8">
                             <div class="card-block">
                                 <h6 class="m-b-20 p-b-5 b-b-default f-w-600">User Information</h6>
-                                <div class="row">
+                                <div class="column">
                                     <div class="col-sm-6">
                                         <p class="m-b-10 f-w-600">Email</p>
-                                        <h6 class="text-muted f-w-400">{user && user?.email}</h6>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <p class="m-b-10 f-w-600">College Name</p>
-                                        <h6 class="text-muted f-w-400" >{user && user?.collegename}</h6>
+                                        <h6 className="text-muted f-w-400 ">{user && user?.email}</h6>
                                     </div>
                                     <div class="col-sm-6">
                                         <p class="m-b-10 f-w-600">Department</p>
                                         <h6 class="text-muted f-w-400" >{user && user?.department}</h6>
                                     </div>
+                                    <div class="col-sm-10">
+                                        <p class="m-b-10 f-w-600">College Name</p>
+                                        <h6 class="text-muted f-w-400" >{user && user?.collegename}</h6>
+                                    </div>
+                                   
                                     <br></br>
                                     <br></br>
                                     <br></br>
                                     <br></br>
-                                    <Button type='submit' block className="updatebutton" onClick={()=>{handleSignUp(user);toggle()}} >                                       Update profile
+                                    <Button type='submit' block className="updatebutton" style={{textAlign:"center"}}onClick={()=>{handleSignUp(user);toggle()}} >                                       Update profile
                                     </Button>
                                 </div>
                                 </div>
@@ -274,7 +280,7 @@ alert("updated")
                                  
                                     
                                      <div className="container">
-      <h1>Answers:</h1>
+     
       {posts.length > 0 ? (
         posts.map((post) => 
         // <div>
@@ -291,7 +297,7 @@ alert("updated")
           </div>
           <div className="card-title-group">
             <h5 className="card-title"key={post.key}>{post.proname} </h5>
-            <div className="card-date">12 123 123</div>
+            <h5 className="card-date"key={post.key}>{post.createdAt.toDate().toDateString()}</h5>
           </div>
          
         </div>
@@ -304,15 +310,15 @@ alert("updated")
         <Carousel autoPlay="true" infiniteLoop="true" >
                 <div>
                     <img src={post.purl} />
-                    <p className="legend">Legend 1</p>
+                    
                 </div>
                 <div>
                     <img src={post.purl} />
-                    <p className="legend">Legend 2</p>
+                    
                 </div>
                 <div>
                     <img src={post.purl} />
-                    <p className="legend">Legend 3</p>
+                 
                 </div>
             </Carousel>
          
@@ -333,16 +339,16 @@ alert("updated")
           )} */}
   
           <div className="like-text">
-            <b></b> Email Here
+            <b></b> 
             {/* <button type="submit" >Delete</button> */}
-            <Button type='submit' block className="updatebutton" onClick={()=> deleteProjectByName(post.proname)} >Delete project
+            <Button type='submit' block className="deletebutton" onClick={()=> deleteProjectByName(post.proname)} >Delete project
                                     </Button>
           </div>
         </div>
       </div>
           )
       ) : (
-        <h1>no answers yet :(</h1>
+        <h1>No Projects yet !!</h1>
       )}
     </div>  
                           
@@ -357,7 +363,7 @@ alert("updated")
                 <Row xs={3} className='offset-xs-3 lg-10'>
                     <Col>
                         <Card>
-                            <Form >
+                            <Form onSubmit={handleUpdate}>
                             <CardHeader>  <ModalHeader toggle={toggle}  style={{color:"gold"}}>Update Profile</ModalHeader></CardHeader>
                                  
                                 <CardBody>
@@ -457,7 +463,7 @@ alert("updated")
                                 <CardFooter>
                                 <ModalFooter>
                                   
-                                    <Button type='submit' block style={{backgroundColor:"gold",color:"black"}} >
+                                    <Button type='submit' block style={{backgroundColor:"gold",color:"black"}}  >
                                         Save
                                     </Button>
                                     </ModalFooter>

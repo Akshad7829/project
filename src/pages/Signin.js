@@ -6,6 +6,7 @@ import { AuthContext } from "../context/authcontext.js";
 import firebase from "firebase/app"
 import { UserContext } from "../context/UserContext"
 import "./signin.css"
+import Loading from "./loading"
 import logo from "./logo.png"
 const Signin=()=>{
 
@@ -15,12 +16,14 @@ const Signin=()=>{
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
 
-
+    const [loading,setLoading] = useState(false);
     const handleSignIn=()=>{
         firebase.auth().signInWithEmailAndPassword(email,password)
         .then(res=>{
+            setLoading(true);
             console.log(res)
             alert("Signed in Successfully  " )
+            setLoading(false);
         //   currentUser.setUser({
         //         email:res.user.email,
         //         uid:res.user.uid
@@ -48,6 +51,9 @@ const Signin=()=>{
   if (currentUser) {
     return <Redirect to="/" />;
   }
+  if(loading==true){
+    return <Loading/>
+}
 
     return(
        
@@ -70,7 +76,7 @@ const Signin=()=>{
                                 <CardBody>
                                     <FormGroup row>
                                         <Label for='email' sm={3}>
-                                            Email
+                                           <b> Email</b>
                                         </Label>
                                         <Col sm={9}>
                                             <Input
@@ -85,7 +91,7 @@ const Signin=()=>{
                                     </FormGroup>
                                     <FormGroup row>
                                         <Label for='password' sm={3}>
-                                            Password
+                                            <b>Password</b>
                                         </Label>
                                         <Col sm={9}>
                                             <Input
@@ -105,8 +111,8 @@ const Signin=()=>{
                                         Sign In
                                     </Button>
                                     <br/>
-                                    <div>No account ? <Link to="/signup">SignUp</Link> Here..</div>
-                                    <div>Forgot Password ? <Link to="/forgotpassword">Forgot Password</Link> Here..</div>
+                                    <div>No account ? <Link to="/signup" className="links">SignUp</Link> Here..</div>
+                                    <div>Forgot Password ? <Link to="/forgotpassword" className="links">Forgot Password</Link> Here..</div>
                                 </CardFooter>
                             </Form>
                         </Card>

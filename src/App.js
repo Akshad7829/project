@@ -22,6 +22,7 @@ import firebaseConfig from "./config/firebaseconfig"
 import Updateprofile from "./pages/updateprofile";
 import Postproject from "./pages/postproject";
 import Contest from "./pages/contest";
+import "./app.css"
 firebase.initializeApp(firebaseConfig);
 
 
@@ -31,9 +32,19 @@ const App=()=>{
 
     return (
         <AuthProvider>
+          
         <Router>
             <ToastContainer />
+           
 
+
+
+            <div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<div class="content">
+
+</div>
             
                 <Header/>
                 <Switch>

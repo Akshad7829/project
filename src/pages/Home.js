@@ -90,11 +90,12 @@ const Home=()=>{
 
   
     return (
-        <Container id="my-background" >
+  
+        <Container id="my-background" className="home" >
 
 
           <div className="container"  >
-      <h1>Projects:</h1>
+      {/* <h1>Projects:</h1> */}
       {posts.length > 0 ? (
         posts.map((post) =>
         
@@ -107,7 +108,8 @@ const Home=()=>{
             
             <div className="card-title-group" >
               <h5 className="card-title">{post.name} </h5>
-              <h5 className="card-date">date</h5>
+              <h5 className="card-date"key={post.key}>{post.createdAt.toDate().toDateString()}</h5>
+              
             </div>
            
           </div>
@@ -120,15 +122,15 @@ const Home=()=>{
           <Carousel autoPlay="true" infiniteLoop="true" >
                 <div>
                     <img src={post.purl} />
-                    <p className="legend">Legend 1</p> 
+                   
                 </div>
                 <div>
                     <img src={post.purl} />
-                    <p className="legend">Legend 2</p>
+                 
                 </div>
                 <div>
                     <img src={post.purl} />
-                    <p className="legend">Legend 3</p>
+                   
                 </div>
             </Carousel>
             <div  ref={ref}>
@@ -154,6 +156,8 @@ const Home=()=>{
           <div className="card-text" key={post.key}>{post.tech}</div><br></br>
           <b><div className="card-text" >Contact Developer:-</div></b>
    <div className="card-text" key={post.key}>{post.email}</div>
+   {/* <b><div className="card-text" >Date :-</div></b>
+   <div className="card-text" key={post.key}>{post.createdAt}</div> */}
    </div>
           <div className="card-like-bar">
             {/* {props.liked ? (
@@ -164,13 +168,13 @@ const Home=()=>{
    
           </div>
           <Pdf targetRef={ref} filename="project.pdf">
-        {({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button>}
+        {({ toPdf }) => <button onClick={toPdf} className="btncolor">Generate Pdf</button> }
       </Pdf>
     
         </div>
           )
       ) : (
-        <h1>no answers yet :(</h1>
+        <h1>No Projects yet !!</h1>
       )}
     </div>
   

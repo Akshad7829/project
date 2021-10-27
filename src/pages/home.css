@@ -1,5 +1,5 @@
 .card {
-	background-color: white;
+	background-color: rgba(138, 142, 143, 0.986);
 	color: #272727;
 	padding: 20px;
 	border-radius: 10px;
@@ -11,6 +11,11 @@
 	
 	
 }
+.btncolor{
+background-color:white;
+height: 2.2rem;
+border-radius: 2rem;
+}
 
 /* .card:hover {
 	transition: 200ms;
@@ -18,7 +23,7 @@
 	border-color: tomato;
 	border-style: solid;
 } */
-
+ 
 .card-header {
 	display: flex;
 	flex-wrap: nowrap;

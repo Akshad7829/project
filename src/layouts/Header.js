@@ -72,7 +72,7 @@ const getUser = async () => {
                      currentUser?(
                          <>
                             <NavItem>
-                         <NavLink    tag={Link}  style={{color:"#e7213e",fontWeight:"bold"}} to="/profile" onClick={activate}>
+                         <NavLink  onClick=" location.reload()"  tag={Link}  style={{color:"#e7213e",fontWeight:"bold"}} to="/profile" onClick={activate}>
                          <img src={user && user?.url} style={{width:"2.5rem",borderRadius:"4rem",height:"2.5rem"}}/>
                          </NavLink>
                          
@@ -91,7 +91,7 @@ const getUser = async () => {
                      </NavItem>
                 
                         <NavItem>
-                            <NavLink  className="font" style={{color:"black",fontFamily: "Roboto Slab,serif"}} onClick={() => firebase.auth().signOut()} >Sign out
+                            <NavLink  className="font" style={{color:"black",fontFamily: "Roboto Slab,serif"}} onClick={() => firebase.auth().signOut()} >Logout
                               
                             </NavLink>
                             

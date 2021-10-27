@@ -10,9 +10,18 @@ body {
 .user-card-full {
     overflow: hidden
 }
+.deletebutton{
+    margin-top: 1rem;
+}
 .updatebutton{
     width: 10rem;
     height: 2rem;
+    margin-top: -5rem;
+/* margin-left: 8rem; */
+text-align: center;
+}
+.line{
+    border: 3px solid black;
 }
 .card {
     border-radius: 5px;
@@ -101,7 +110,9 @@ h6 {
 }
 
 .text-muted {
-    color: #919aa3 !important
+    color:white !important;
+    margin-top: -0.7rem;
+    
 }
 
 .b-b-default {
