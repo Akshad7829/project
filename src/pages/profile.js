@@ -240,7 +240,7 @@ alert("updated")
       <div>
         <Container>
       
-         <div class="card user-card-full">
+         <div class="cards user-card-full">
                     <div class="row m-l-0 m-r-0">
                         <div class="col-sm-4 bg-c-lite-green user-profile">
                             <div class="card-block text-center text-white">
@@ -250,10 +250,10 @@ alert("updated")
                             </div>
                         </div>
                         <div class="col-sm-8">
-                            <div class="card-block">
+                            <div class="cards-block">
                                 <h6 class="m-b-20 p-b-5 b-b-default f-w-600">User Information</h6>
                                 <div class="column">
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-10">
                                         <p class="m-b-10 f-w-600">Email</p>
                                         <h6 className="text-muted f-w-400 ">{user && user?.email}</h6>
                                     </div>
@@ -278,10 +278,11 @@ alert("updated")
                                 </div></div>
       
                                  
-                                    
+                                   <hr className="line"></hr> 
                                      <div className="container">
-     
+                                       
       {posts.length > 0 ? (
+      
         posts.map((post) => 
         // <div>
         //   <p key={post.key}>{post.pname}</p>
@@ -290,7 +291,10 @@ alert("updated")
         //   <img key={post.key} src={post.purl} style={{width:"20rem",height:"20rem"}}/>
         //   <p key={post.key}>{post.desc}</p>
         //   </div>
+  
+        
         <div className="card">
+         
         <div className="card-header">
           <div className="profile">
             {/* <span className="letter">{props.author[0]}</span> */}

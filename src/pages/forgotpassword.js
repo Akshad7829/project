@@ -5,6 +5,7 @@ import {toast} from "react-toastify"
 import { AuthContext } from "../context/authcontext.js";
 import firebase from "firebase/app"
 import { UserContext } from "../context/UserContext"
+import "./forgot.css"
 const Forgotpassword=()=>{
 
 
@@ -42,7 +43,7 @@ const Forgotpassword=()=>{
             <Container className='text-center'>
                 <Row> 
                                          <Col lg={6} className='col-md-2 center'>
-                        <Card>
+                        <Card className="forgot">
                             <Form onSubmit={handleSubmit}>
                                 <CardHeader style={{color:"gold",backgroundColor:"black"}}>Forgot password</CardHeader>
                                 <CardBody>

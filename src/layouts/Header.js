@@ -1,15 +1,16 @@
 import React,{useState,useContext,useEffect} from 'react'
-import {Collapse,Container,Navbar,NavbarToggler,Nav,NavItem,NavLink,NavbarText, NavbarBrand} from "reactstrap"
+import {Collapse,Container,Navbar,NavbarToggler,DropdownMenu,DropdownItem,DropdownToggle,UncontrolledDropdown,Nav,NavItem,NavLink,NavbarText, NavbarBrand} from "reactstrap"
 import {Link} from 'react-router-dom'
 import firebase from 'firebase'
 import { UserContext } from '../context/UserContext'
 import { AuthContext } from "../context/authcontext.js";
-
+import profile from "./profile-user.png"
 import logo from "./logo.png"
 import signup from "./signup.png"
 import signin from "./signin.png"
 import "./layout.css"
-
+import Profile from '../pages/profile'
+import Postproject from '../pages/postproject'
 const Header=()=>{
     //  const [user, setUser] = useState();
     const [loading, setLoading] = useState(true);
@@ -24,24 +25,11 @@ const Header=()=>{
   
 
 
-const getUser = async () => {
-   try {
-     const documentSnapshot = await firebase.firestore()
-       .collection('users')
-       .doc(firebase.auth().currentUser.email)
-       .get();
 
-     userData = documentSnapshot.data();
-     console.log(userData)
-      setUser(userData);
-   } catch {
-     //do whatever
-   }
- };
 
  // Get user on mount
  useEffect(() => {
-   getUser();
+  
    setPending(false)
  }, []);
     const [signincolor,setSignincolor]=useState("white")
@@ -58,8 +46,8 @@ const getUser = async () => {
 
     return (
         <div>
-        <Navbar className="navbar" style={{  boxShadow: "0px 8px 8px -6px rgba(0,0,0,.5)", background: "-webkit-gradient(linear, left top, right top, from(#f29263), to(#ee5a6f))" }} light expand="md" >
-            <NavbarBrand ><Link to="/" className="text-white" style={{textDecoration:"none"}}><span style={{color:"black",}}>ProjectBook</span><span style={{color:"gold"}}></span></Link></NavbarBrand>
+        <Navbar className="navbar" style={{  boxShadow: "0px 8px 8px -6px rgba(0,0,0,.5)", background: "rgb(1,196,173)" }} light expand="md" >
+            <NavbarBrand ><Link className="text-white" style={{textDecoration:"none"}}><span style={{color:"black",  }}>ProjectBook</span><span style={{color:"gold",fontFamily:"Lobster"}}></span></Link></NavbarBrand>
             {/* <NavbarText className="text-white">{
                 context.user?.email ? context.user.email : "" 
             }</NavbarText> */}
@@ -72,30 +60,45 @@ const getUser = async () => {
                      currentUser?(
                          <>
                             <NavItem>
-                         <NavLink  onClick=" location.reload()"  tag={Link}  style={{color:"#e7213e",fontWeight:"bold"}} to="/profile" onClick={activate}>
-                         <img src={user && user?.url} style={{width:"2.5rem",borderRadius:"4rem",height:"2.5rem"}}/>
-                         </NavLink>
-                         
-                     </NavItem>
-                     <NavItem>
-                         <NavLink  className="font"  tag={Link}  style={{color:"black",fontFamily: "Roboto Slab,serif",}} to="/postproject" onClick={activate}>Post project
+                         <NavLink  className="font"  tag={Link}  style={{color:"black", fontFamily: "Montserrat, sans-serif",fontWeight:"bold",fontSize:"1.2rem"}} to="/" onClick={activate}>Home
                            
                          </NavLink>
                          
                      </NavItem>
-                     <NavItem>
-                         <NavLink  className="font"  tag={Link}  style={{color:"black",fontFamily: "Roboto Slab,serif",}} to="/contest" onClick={activate}>Contest Details
+                             <NavItem>
+                         <NavLink  className="font"  tag={Link}  style={{color:"black",fontFamily: "Montserrat, sans-serif",fontWeight:"bold",fontSize:"1.2rem"}} to="/contest" onClick={activate}>Contest Details
                            
                          </NavLink>
                          
                      </NavItem>
+                  
+                   
+                     <UncontrolledDropdown
+          inNavbar
+          nav
+        >
+          <DropdownToggle
+            caret
+            nav
+          >
+           <img src={profile} style={{width:"2.5rem",borderRadius:"4rem",height:"2.5rem"}}/>
+          </DropdownToggle>
+          <DropdownMenu right>
+            <DropdownItem  href="/profile">
+              profile
+            </DropdownItem>
+            <DropdownItem href="/postproject">
+             Post Project
+            </DropdownItem>
+            <DropdownItem onClick={() => firebase.auth().signOut()} >
+           Logout
+            </DropdownItem>
+          </DropdownMenu>
+        </UncontrolledDropdown>
+                     
+                   
                 
-                        <NavItem>
-                            <NavLink  className="font" style={{color:"black",fontFamily: "Roboto Slab,serif"}} onClick={() => firebase.auth().signOut()} >Logout
-                              
-                            </NavLink>
-                            
-                        </NavItem>
+                       
                       
                         </>
                         ):(

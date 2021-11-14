@@ -1,4 +1,5 @@
 import React, { useEffect, useState,useContext } from "react";
+import { Button, Card, CardBody, CardFooter, CardHeader, Col, Container, Form, FormGroup, Input, Label, Row } from "reactstrap"
 import  firebase from "firebase/app"
 import 'firebase/firestore';
 import { AuthContext } from "../context/authcontext.js";
@@ -120,24 +121,113 @@ const emal=firebase.auth().currentUser.email;
       return <Loading/>
   }
   return (
-    <div className="container">
-      <h1>Form</h1>
-      <form onSubmit={saveAnswer}>
+//     <div className="container">
+//       <h1>Form</h1>
+//       <form onSubmit={saveAnswer}>
       
-        <label>Project Name:-</label>
-    <input  type="text" required="true" id="name" placeholder="Project Name"  onChange={e => setpName(e.target.value)}></input> <br></br>
-    <label>Project Domain:-</label>
-    <input  type="text" required="true" id="domain" placeholder="Project Domain"  onChange={e => setDomain(e.target.value)}></input> <br></br>
-    <label>Project ScreenShots:-</label>
-    <input  type="file"  id="ss" placeholder="Type here..." multiple required name="img" onChange={e => setImage(e.target.files[0])}></input> <br></br> 
-    <label>Project Description:-</label>
-        <textarea  type="text" required="true" id="description" placeholder="Project Description."  onChange={e => setDesc(e.target.value)}></textarea><br></br>
-        <label>Technology stack used:-</label>
-        <textarea  type="text" required="true" id="tech" placeholder="Technology stack used."  onChange={e => setTech(e.target.value)}></textarea><br></br>
-        <button>Submit to Firebase</button>
-      </form>
+//         <label>Project Name:-</label>
+//     <input  type="text" required="true" id="name" placeholder="Project Name"  onChange={e => setpName(e.target.value)}></input> <br></br>
+//     <label>Project Domain:-</label>
+//     <input  type="text" required="true" id="domain" placeholder="Project Domain"  onChange={e => setDomain(e.target.value)}></input> <br></br>
+//     <label>Project ScreenShots:-</label>
+//     <input  type="file"  id="ss" placeholder="Type here..." multiple required name="img" onChange={e => setImage(e.target.files[0])}></input> <br></br> 
+//     <label>Project Description:-</label>
+//         <textarea  type="text" required="true" id="description" placeholder="Project Description."  onChange={e => setDesc(e.target.value)}></textarea><br></br>
+//         <label>Technology stack used:-</label>
+//         <textarea  type="text" required="true" id="tech" placeholder="Technology stack used."  onChange={e => setTech(e.target.value)}></textarea><br></br>
+//         <button>Submit to Firebase</button>
+//       </form>
      
-    </div>
+//     </div>
+
+
+// .props...................
+
+<div className="wholepage">
+          
+          <Row> 
+                                   <Col lg={6} className='offset-lg-3 mt-5'>
+                  <Card className="sign">
+                      <Form onSubmit={saveAnswer}>
+                          <CardHeader style={{color:"gold",backgroundColor:"black"}}>Post Project</CardHeader>
+                          <CardBody>
+                              <FormGroup row>
+                                  <Label  sm={3}>
+                                     <b> Project Name</b>
+                                  </Label>
+                                  <Col sm={9}>
+                                      <Input
+                                          type='text'
+                                       
+                                          id='name'
+                                          placeholder='Project  Name'
+                                          
+                                          onChange={e => setpName(e.target.value)}
+                                      />
+                                  </Col>
+                              </FormGroup>
+                              <FormGroup row>
+                                  <Label  sm={3}>
+                                     <b> Domain Name</b>
+                                  </Label>
+                                  <Col sm={9}>
+                                      <Input
+                                          type='text'
+                                       
+                                          id='domain'
+                                          placeholder='Domain Name'
+                                          
+                                          onChange={e => setDomain(e.target.value)}
+                                      />
+                                  </Col>
+                              </FormGroup>
+                              <label>Project ScreenShots:-</label>
+    <input  type="file"  id="ss" placeholder="Type here..." multiple required name="img" onChange={e => setImage(e.target.files[0])}></input> <br></br> 
+                              <FormGroup row>
+                                  <Label  sm={3}>
+                                     <b> Project Description</b>
+                                  </Label>
+                                  <Col sm={9}>
+                                      <Input
+                                          type='text'
+                                       
+                                          id='description'
+                                          placeholder='project desc'
+                                          
+                                         onChange={e => setDesc(e.target.value)}
+                                      />
+                                  </Col>
+                              </FormGroup>
+                              <FormGroup row>
+                                  <Label  sm={3}>
+                                     <b> Project tech</b>
+                                  </Label>
+                                  <Col sm={9}>
+                                      <Input
+                                          type='text'
+                                       
+                                          id='tech'
+                                          placeholder='project tech'
+                                          
+                                         onChange={e => setTech(e.target.value)}
+                                      />
+                                  </Col>
+                              </FormGroup>
+                          </CardBody>
+                          <CardFooter>
+                              
+                              <Button type='submit' block style={{backgroundColor:"gold",color:"black"}}>
+                                Submit 
+                              </Button>
+                              <br/>
+                              {/* <div>No account ? <Link to="/signup" className="links">SignUp</Link> Here..</div>
+                              <div>Forgot Password ? <Link to="/forgotpassword" className="links">Forgot Password</Link> Here..</div> */}
+                          </CardFooter>
+                      </Form>
+                  </Card>
+              </Col> 
+           </Row>
+           </div>
   );
 };
 

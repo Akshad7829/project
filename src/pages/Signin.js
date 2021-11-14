@@ -61,7 +61,7 @@ const Signin=()=>{
             <Container className='text-center'>
                   <Col   sm={3} className="m-auto">
   <img
-    className="d-block mx-auto img-fluid w-50"
+    className=" logos"
     src={logo}
     alt="mysvg"
   ></img>
@@ -70,7 +70,7 @@ const Signin=()=>{
           
                 <Row> 
                                          <Col lg={6} className='offset-lg-3 mt-5'>
-                        <Card>
+                        <Card className="sign">
                             <Form onSubmit={handleSubmit}>
                                 <CardHeader style={{color:"gold",backgroundColor:"black"}}>SignIn here</CardHeader>
                                 <CardBody>

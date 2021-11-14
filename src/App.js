@@ -31,20 +31,19 @@ const App=()=>{
     const [user,setUser]    =useState(null)
 
     return (
+        
         <AuthProvider>
-          
+    
         <Router>
             <ToastContainer />
            
 
 
+            <div class="bg">  </div>
+        
 
-            <div class="bg"></div>
-<div class="bg bg2"></div>
-<div class="bg bg3"></div>
-<div class="content">
 
-</div>
+
             
                 <Header/>
                 <Switch>
@@ -63,7 +62,9 @@ const App=()=>{
                 <Footer />
             
         </Router>
+      
 </AuthProvider>
+
     )
 }
 

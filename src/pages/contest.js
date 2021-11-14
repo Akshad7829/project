@@ -11,7 +11,7 @@ import { Redirect } from "react-router-dom";
 import { UserContext } from '../context/UserContext'
 import axios from "axios";
 import Loading from "./loading"
-//import "./styles.css";
+import "./contest.css";
 
 function Contest() {
 // const {REACT_APP_client_id}=process.env;
@@ -20,6 +20,7 @@ function Contest() {
 const[phots,setphotos]=useState([])
   const [dark, setMode] = useState(false);
   const [result, getresult] = useState([]);
+  const { currentUser } = useContext(AuthContext);
   function handleChange(event) {
     setphotos(event.target.value);
   }
@@ -44,7 +45,9 @@ const[phots,setphotos]=useState([])
       if(loading==true){
         return <Loading/>
     }
-
+    if(!currentUser?.uid){
+      return <Redirect to="/signin"/>
+  }
   return (
     <div className="body">
       <div className="App">
@@ -72,7 +75,7 @@ const[phots,setphotos]=useState([])
 
             <div className="card-list">
 
-              {result.map((photos) => (<div className="card">
+              {result.map((photos) => (<div className="cards">
 
                   {/* <LazyLoadImage
                     className="image"

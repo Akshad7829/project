@@ -1,4 +1,4 @@
-html {
+/* html {
   height:100%;
 }
 
@@ -51,4 +51,14 @@ h1 {
   100% {
     transform:translateX(25%);
   }
+} */
+.bg{
+  background-color:#C0C0C0;
+  bottom:0;
+  left:-50%;
+
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
 }

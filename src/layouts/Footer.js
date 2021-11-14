@@ -16,7 +16,7 @@ const Footer=()=>{
         // </Container>
         <footer class="footer">
   <div class="container">
-    <span class="text-muted foot">Copyright ©2021 ProjectBook . All rights reserved.</span>
+    <p class="text-muted foot" style={{color:"black"}}>Copyright ©2021 ProjectBook . All rights reserved.</p>
   </div>
 </footer>
     )

@@ -1,0 +1,14 @@
+
+@media only screen and (max-device-width: 480px) {
+    .forgot {
+      width: 80%;
+      margin-left: 2rem;
+    }
+    .logos{
+        margin-top: 1rem;
+        margin-left: rem;
+        width: 7rem;
+        height: 6rem;
+    }
+
+  }

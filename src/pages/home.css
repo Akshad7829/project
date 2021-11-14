@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+body{
+	font-family: Montserrat, sans-serif;
+	
+}
 .card {
-	background-color: rgba(138, 142, 143, 0.986);
+	background-color: white;
 	color: #272727;
 	padding: 20px;
 	border-radius: 10px;
@@ -7,12 +12,13 @@
 	border-color: tomato;
 	border-style: solid;
 	transition: 200ms;
-    max-width: 380rem;
+    width: 380rem;
 	
 	
 }
 .btncolor{
-background-color:white;
+background-color:black;
+color: white;
 height: 2.2rem;
 border-radius: 2rem;
 }
@@ -56,13 +62,13 @@ border-radius: 2rem;
 
 .card-title {
 	flex: 0.5;
-	font-size: large;
+	font-size: 1.2rem;
 	margin-bottom: 0;
 	margin-top: 0;
 }
 .card-date {
 	flex: 0.3;
-	font-size: small;
+	font-size: 1rem;
 	margin-top: 0;
 }
 
@@ -77,10 +83,12 @@ border-radius: 2rem;
 .card-like-icon {
 	height: 25px;
 }
-
+.teext{
+	font-size: 5rem;
+}
 .card-text {
-	width: 45rem;
-	font-size: medium;
+	 width: 45rem;
+	font-size:xx-large;
 }
 
 .card-like-bar {
@@ -91,7 +99,7 @@ border-radius: 2rem;
 }
 
 .like-text {
-	font-size: small;
+	font-size: 1.5rem;
 	margin-left: 10px;
 }
 
@@ -112,7 +120,7 @@ img {vertical-align: middle;}
 /* Caption text */
 .text {
   color: #f2f2f2;
-  font-size: 15px;
+  /* font-size: 15px; */
   padding: 8px 12px;
   position: absolute;
   bottom: 8px;
@@ -163,6 +171,56 @@ img {vertical-align: middle;}
 }
 
 /* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .text {font-size: 11px}
+@media only screen and (max-device-width: 480px) {
+	/* .card{
+		background-color: black;
+	color: #272727;
+	padding: 1px;
+	border-radius: 10px;
+	border: 0px;
+	border-color: tomato;
+	border-style: solid;
+	transition: 50ms;
+    width: -80px;
+	} */
+	.container {
+		
+		margin-left: -6rem;
+		
+		
+	}
+	
+	.home{
+		width: 10%;
+	}
+
+	.btncolor{
+		width: 90%;
+	}
+	.card-title-group {
+		flex: 0.5;
+		font-size: 1.2rem;
+		margin-bottom: 0;
+		margin-top: 0;
+		margin-left: 15rem;
+		align-items: center;
+		width: 20rem;
+
+	}
+	.card-header {
+		width: 40%;
+		justify-content: center;
+		padding: 2%;
+	}
+	.imag{
+		width: 90%;
+	}
+	/* .card-title {
+		flex: 0.5;
+		font-size: 1.2rem;
+		margin-bottom: 0;
+		margin-top: 0;
+		width: 10px;
+	} */
+
 }

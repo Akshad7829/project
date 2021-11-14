@@ -119,7 +119,7 @@ const Home=()=>{
          
           <b><div className="card-text" >Project Screenshots:-</div></b>
           <br></br>
-          <Carousel autoPlay="true" infiniteLoop="true" >
+          <Carousel autoPlay="true" infiniteLoop="true" className="imag" >
                 <div>
                     <img src={post.purl} />
                    
@@ -148,7 +148,7 @@ const Home=()=>{
            <br></br>
           <br></br>
        
-           <b><div className="card-text" >Project Description:-</div></b>
+           <b><div className="card-text teext" >Project Description:-</div></b>
           <div className="card-text" key={post.key}> {post.desc}</div>
           <br></br>
           <br></br>

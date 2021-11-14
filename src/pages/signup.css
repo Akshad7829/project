@@ -2,7 +2,7 @@ form {
     width: 100%;
   }
   
-  .loginBox {
+  .signup {
     width: 50%;
     text-align: center;
     position: relative;
@@ -11,6 +11,7 @@ form {
     padding: 20px;
     background-color: white;
     box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.4);
+  
   }
   
   .signUpSubmit {
@@ -44,9 +45,14 @@ form {
   }
  
   
-  @media screen and (max-width: 550px) {
-    .loginBox {
-      width: 85%;
+  @media only screen and (max-device-width: 480px) {
+    .signup {
+      width: 50%;
+      margin-left: 2rem;
     }
+    form {
+      width: 50%;
+    }
+
   }
   

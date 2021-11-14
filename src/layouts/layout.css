@@ -1,18 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap');
-
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 .text-white{
     font-family: 'Lobster', cursive;
     font-size: 2rem;
 }
-.font{
-    color:"black";
-    font-family: "Roboto Slab,serif";
-    font-weight:"bold";
-}
+
 .foot{
     margin-left: 22rem;
+font-size: 1.5rem;
+ 
+    
+    font-weight:bolder;
 }
 /* .navbar{
     position: fixed;
@@ -28,7 +29,23 @@
         box-shadow: 0 -5px 6px rgba(0,0,0,0.5);
         } */
 .footer{
-    position: sticky;
+    position:relative;
     bottom: 0%;
-    top: 100rem;
+    top: 43rem;
+   
+}
+@media only screen and (max-device-width: 480px) {
+    .footer{
+        position:relative;
+        bottom: 0%;
+        top: 43rem;
+       margin-left: 1rem;
+    } 
+    .foot{
+        margin-left: 5rem;
+    font-size: 1rem;
+     
+        
+        font-weight:bolder;
+    }
 }

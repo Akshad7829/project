@@ -77,7 +77,7 @@ const Signup=()=>{
             // })
           setLoading(false);
           
-            alert("Signed Up in Successfully  " )
+            alert("Signed Up  Successfully  " )
             firebase.firestore().collection('users').doc(email).set({
                 "email":email,
                 "name": name,
@@ -118,16 +118,7 @@ const Signup=()=>{
     
     }
     const { currentUser } = useContext(AuthContext);
-//     if(loading){
-//         return <h1>loading...</h1>
-//     }
-//  ]
-//     useEffect (() => {
-//         // handleSignUp();
-//     //      //stop loading when data is fetched
-       
-    
-//     //   }, [])
+
     if (currentUser) {
         return <Redirect to="/" />;
       }
@@ -148,7 +139,7 @@ const Signup=()=>{
   </Col>
                   <Row>
                     <Col lg={6} className='col-md-2 center '>
-                        <Card className="loginBox">
+                        <Card className="signup">
                             <Form onSubmit={handleSubmit}>
                                 <CardHeader className='' style={{backgroundColor:"black",color:"gold"}}>SignUp here</CardHeader>
                                 <CardBody>

@@ -87,8 +87,8 @@ this tab we are going to take various inputs from user like project name, domain
         <CardBody className="features1">
       
           <CardText><b>4)</b> As on Instagram/ Facebook we can see the photos posted by other
-// users same as in our website we can see the projects posted by other
-// users.</CardText>
+ users same as in our website we can see the projects posted by other
+ users.</CardText>
           <CardText>
            
           </CardText>
@@ -99,8 +99,8 @@ this tab we are going to take various inputs from user like project name, domain
         <CardBody className="features1">
 
           <CardText><b>5)</b> If we want more details of project we can also contact the user who
-// has posted the project through mail. In our website, we are going to add one more tab named <b>“CONTEST
-// DETAILS” </b>.</CardText>
+ has posted the project through mail. In our website, we are going to add one more tab named <b>“CONTEST
+ DETAILS” </b>.</CardText>
           <CardText>
            
           </CardText>
@@ -110,37 +110,7 @@ this tab we are going to take various inputs from user like project name, domain
 
       </Container>
       </div>
-      <h1  id="feat" className="feattext">Team Members</h1>
-      <div className="clearfix">
-        <div className="row">
-        
-            <div className="col-md-4 animated fadeIn">
-              <div className="card">
-                <div className="card-body">
-                  {/* <div className="avatar">
-                    <img
-                      
-                      className="card-img-top"
-                      alt="xyz"
-                    />
-                  </div> */}
-                  <h5 className="card-title">
-                   Akshad Nayakwadi
-                  </h5>
-                  <p className="card-text">
-                    Sangli,Maharashtra
-                    <br />
-                    <span className="phone">9405586649</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-              </div>
-              
-              
-              
-              
-    </div>
+      
     </div>
   );
 };

@@ -1,4 +1,7 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+body{
+	font-family: Montserrat, sans-serif;
+}
 body {
     background-color: #f9f9fa
 }
@@ -10,8 +13,13 @@ body {
 .user-card-full {
     overflow: hidden
 }
+.user-cards-full {
+    overflow: hidden
+}
 .deletebutton{
     margin-top: 1rem;
+    background-color: black;
+    color: white;
 }
 .updatebutton{
     width: 10rem;
@@ -19,9 +27,14 @@ body {
     margin-top: -5rem;
 /* margin-left: 8rem; */
 text-align: center;
+background-color: black;
+    color: white;
 }
 .line{
-    border: 3px solid black;
+    height: 3px;
+    background-color: black;
+    border: none;
+    
 }
 .card {
     border-radius: 5px;
@@ -31,6 +44,17 @@ text-align: center;
     margin-bottom: 30px;
     margin-top: 5rem;
     width: 50rem;
+    margin-left: 10rem;
+}
+.cards {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    border: none;
+    margin-bottom: 30px;
+    margin-top: 5rem;
+    width: 50rem;
+    background-color: white;
     margin-left: 10rem;
 }
 
@@ -45,10 +69,14 @@ text-align: center;
 .user-card-full .user-profile {
     border-radius: 5px 0 0 5px
 }
+.user-cards-full .user-profile {
+    border-radius: 5px 0 0 5px
+}
+
 
 .bg-c-lite-green {
-    background: -webkit-gradient(linear, left top, right top, from(#f29263), to(#ee5a6f));
-    background: linear-gradient(to right, #ee5a6f, #f29263)
+    background: rgb(1,196,173);
+    background:rgb(1,196,173)
 }
 
 .user-profile {
@@ -56,6 +84,9 @@ text-align: center;
 }
 
 .card-block {
+    padding: 1.25rem
+}
+.cards-block {
     padding: 1.25rem
 }
 
@@ -76,6 +107,9 @@ h6 {
 .card .card-block p {
     line-height: 25px
 }
+.cards .cards-block p {
+    line-height: 25px
+}
 
 @media only screen and (min-width: 1400px) {
     p {
@@ -88,7 +122,9 @@ h6 {
 .card-block {
     padding: 1.25rem
 }
-
+.cards-block {
+    padding: 1.25rem
+}
 .b-b-default {
     border-bottom: 1px solid #e0e0e0
 }
@@ -104,13 +140,16 @@ h6 {
 .card .card-block p {
     line-height: 25px
 }
+.cards .cards-block p {
+    line-height: 25px
+}
 
 .m-b-10 {
     margin-bottom: 10px
 }
 
 .text-muted {
-    color:white !important;
+    color:grey !important;
     margin-top: -0.7rem;
     
 }
@@ -146,10 +185,56 @@ h6 {
 .user-card-full .social-link li {
     display: inline-block
 }
+.user-cards-full .social-link li {
+    display: inline-block
+}
 
 .user-card-full .social-link li a {
     font-size: 20px;
     margin: 0 10px 0 0;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out
+}
+.user-cards-full .social-link li a {
+    font-size: 20px;
+    margin: 0 10px 0 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out
+}
+@media only screen and (max-device-width: 480px) {
+
+    .card {
+        border-radius: 5px;
+        -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+        box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+        border: none;
+        margin-bottom: 30px;
+        margin-top: 5rem;
+        width: 22rem;
+        margin-left: 10rem;
+    }
+    .cards {
+        border-radius: 5px;
+        -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+        box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+        border: none;
+        margin-bottom: 30px;
+        margin-top: 5rem;
+        width: 22rem;
+        margin-left: 5rem;
+    }
+    .card-header{
+        width: 17rem;
+    }
+    .card-title-group{
+      font-size: 1rem;
+        margin-left: 1rem;
+    }
+    .line{
+        height: 3px;
+        background-color: black;
+        border: none;
+        margin-left:10rem;
+        
+    }
 }
