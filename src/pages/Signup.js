@@ -75,9 +75,11 @@ const Signup=()=>{
             
             //     uid:res.user.uid
             // })
-          setLoading(false);
-          
+            setLoading(false);
             alert("Signed Up  Successfully  " )
+            
+          
+           
             firebase.firestore().collection('users').doc(email).set({
                 "email":email,
                 "name": name,
@@ -85,25 +87,29 @@ const Signup=()=>{
                 "department": department,
                 "url":url,
                 });
-             
+                
 
             // toast(res.message,{
             //     type:"res"
             // })
            
         })
+      
         .catch(error=>{
             console.log(error)
             toast(error.message,{
                 type:"error"
             })
         })
+        // alert("Signed Up  Successfully  " )
+         //setLoading(false);
               });
           }
         )
         )
         
          console.log("image", image)
+      
       
         }
  
@@ -139,7 +145,7 @@ const Signup=()=>{
   </Col>
                   <Row>
                     <Col lg={6} className='col-md-2 center '>
-                        <Card className="signup">
+                        <Card className="loginBox">
                             <Form onSubmit={handleSubmit}>
                                 <CardHeader className='' style={{backgroundColor:"black",color:"gold"}}>SignUp here</CardHeader>
                                 <CardBody>

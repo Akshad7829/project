@@ -20,9 +20,7 @@ const About = (props) => {
         <NavItem>
           <NavLink href="#feat">Features</NavLink>
         </NavItem>
-        <NavItem>
-          <NavLink href="#team">team Members</NavLink>
-        </NavItem>
+       
     
        
       </Nav>

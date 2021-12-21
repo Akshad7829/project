@@ -352,7 +352,7 @@ alert("updated")
       </div>
           )
       ) : (
-        <h1>No Projects yet !!</h1>
+        <h1></h1>
       )}
     </div>  
                           
@@ -364,9 +364,9 @@ alert("updated")
           <Col >
         <ModalBody>
         <Container className='text-center'>
-                <Row xs={3} className='offset-xs-3 lg-10'>
+                <Row xs={3} className='offset-xs-3 lg-5 back'>
                     <Col>
-                        <Card>
+                        <Card className="updte">
                             <Form onSubmit={handleUpdate}>
                             <CardHeader>  <ModalHeader toggle={toggle}  style={{color:"gold"}}>Update Profile</ModalHeader></CardHeader>
                                  

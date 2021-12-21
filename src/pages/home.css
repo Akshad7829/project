@@ -193,6 +193,10 @@ img {vertical-align: middle;}
 	.home{
 		width: 10%;
 	}
+	.card-text {
+		width: 20rem;
+	   font-size:xx-large;
+   }
 
 	.btncolor{
 		width: 90%;

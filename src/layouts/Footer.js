@@ -15,9 +15,9 @@ const Footer=()=>{
         //     </div>
         // </Container>
         <footer class="footer">
-  <div class="container">
+  {/* <div class="container">
     <p class="text-muted foot" style={{color:"black"}}>Copyright ©2021 ProjectBook . All rights reserved.</p>
-  </div>
+  </div> */}
 </footer>
     )
 }

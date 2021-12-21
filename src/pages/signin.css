@@ -15,11 +15,11 @@
 @media only screen and (max-device-width: 480px) {
     .sign {
       width: 50%;
-      margin-left: 23rem;
+      margin-left: 29rem;
     }
     .logos{
         margin-top: 1rem;
-        margin-left: 1rem;
+        margin-left: 12rem;
         width: 7rem;
         height: 6rem;
     }

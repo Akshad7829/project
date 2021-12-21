@@ -6,6 +6,7 @@ import { AuthContext } from "../context/authcontext.js";
 import { UserContext } from "../context/UserContext"
 import {Redirect} from "react-router-dom"
 import Loading from "./loading"
+import "./postproject.css"
 import { name } from "faker";
 const SignUp = () => {
   var userData;
@@ -147,7 +148,7 @@ const emal=firebase.auth().currentUser.email;
           
           <Row> 
                                    <Col lg={6} className='offset-lg-3 mt-5'>
-                  <Card className="sign">
+                  <Card className="post">
                       <Form onSubmit={saveAnswer}>
                           <CardHeader style={{color:"gold",backgroundColor:"black"}}>Post Project</CardHeader>
                           <CardBody>
@@ -189,7 +190,7 @@ const emal=firebase.auth().currentUser.email;
                                   </Label>
                                   <Col sm={9}>
                                       <Input
-                                          type='text'
+                                          type="textarea"
                                        
                                           id='description'
                                           placeholder='project desc'
@@ -204,7 +205,7 @@ const emal=firebase.auth().currentUser.email;
                                   </Label>
                                   <Col sm={9}>
                                       <Input
-                                          type='text'
+                                           type="textarea"
                                        
                                           id='tech'
                                           placeholder='project tech'

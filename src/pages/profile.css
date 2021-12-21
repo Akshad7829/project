@@ -169,7 +169,10 @@ h6 {
 .m-t-40 {
     margin-top: 20px
 }
-
+.updte{
+    margin-left: -0.5rem;
+    width:350%;
+}
 .p-b-5 {
     padding-bottom: 5px !important
 }
@@ -201,6 +204,7 @@ h6 {
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out
 }
+
 @media only screen and (max-device-width: 480px) {
 
     .card {
@@ -236,5 +240,11 @@ h6 {
         border: none;
         margin-left:10rem;
         
+    }
+}
+@media only screen and (max-device-width: 480px) {
+    .updte{
+        margin-left: 3rem;
+        width: 200%;
     }
 }

@@ -1,0 +1,9 @@
+.post{
+    margin-left: 20rem;
+}
+
+@media only screen and (max-device-width: 480px) {
+    .post{
+        margin-left: 24rem;
+    }
+}

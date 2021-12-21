@@ -48,7 +48,8 @@ form {
   @media only screen and (max-device-width: 480px) {
     .signup {
       width: 50%;
-      margin-left: 2rem;
+      margin-left: -100rem;
+      padding: 1px;
     }
     form {
       width: 50%;
